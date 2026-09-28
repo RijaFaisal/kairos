@@ -1,0 +1,39 @@
+# Demo business for local testing. Copy this file to load your own business:
+#   python -m kairos.seed seeds/<your_business>.yaml
+#
+# wa_phone_number_id is optional here; if omitted, WA_PHONE_NUMBER_ID from .env
+# is used. Prices are whole units of the business's currency.
+
+business:
+  name: Demo Store
+  timezone: Asia/Karachi
+  owner_phones: []          # digits only, e.g. "923001234567"
+  settings:
+    currency_label: Rs
+    greeting: "Hi! Welcome to Demo Store. What would you like to order today?"
+    delivery_rules:
+      same_day_cutoff: "18:00"
+      min_order: 500
+
+catalog:
+  - name: Classic Item
+    aliases: [classic, regular]
+    price: 450
+    unit: pack of 6
+    category: Standard
+  - name: Deluxe Item
+    aliases: [deluxe, premium]
+    price: 750
+    unit: pack of 6
+    category: Standard
+  - name: Gift Box
+    aliases: [gift, box]
+    price: 1200
+    unit: box
+    category: Extras
+  - name: Sample Pack
+    aliases: [sample, trial pack]
+    price: 200
+    unit: pack
+    available: false
+    category: Extras
